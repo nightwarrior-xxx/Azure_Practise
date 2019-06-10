@@ -5,7 +5,7 @@ Recovery Vault is a container that stores the backup of your protected data. Whe
 ```
 az backup vault create --location eastus --name myBackup --resource-group myResourceGroup
 ```
-![Backup_create_vault](backup_vault_create.png)
+![Backup_create_vault](./img/backup_vault_create.png)
 
 - Change the vault properties
 By default backup is set to Geo-Redundant
