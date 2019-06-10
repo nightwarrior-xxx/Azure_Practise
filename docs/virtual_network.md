@@ -26,3 +26,40 @@ az network vnet create --name myVirtualNetwork --resource-group myResourceGroup 
 ```
 
 ![Create Virtual Network](./img/vn.png)
+
+
+- Create virtual machines
+
+Create two VMs in the virtual network.
+
+Create the first VM
+
+Create a VM with az vm create. If SSH keys don't already exist in a default key location, the command creates them. To use a specific set of keys, use the ```--ssh-key-value``` option. The ```--no-wait``` option creates the VM in the background, so that you can continue to the next step. This example creates a VM named ```myVm1```:
+
+```
+az vm create --resource-group myResourceGroup --name myVm1 --image UbuntuLTS --generate-ssh-keys --no-wait
+```
+
+Create the second VM
+
+```
+az vm create --resource-group myResourceGroup --name myVm2 --image UbuntuLTS --generate-ssh-keys
+```
+
+![Two VMs](./img/vms.png)
+
+- Connect to the internet
+
+```
+ssh <public IP of the VM2>
+```
+![SSH](./img/ssh.png)
+
+- Communicate between two VMs
+To communicate betweeen two VMs use the following command
+```
+ping myVM1 -c 4
+```
+You will receive 4 replies from VM1.
+
+![Ping_VM1](./img/ping.png)
