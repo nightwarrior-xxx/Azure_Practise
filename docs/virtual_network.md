@@ -63,3 +63,5 @@ ping myVM1 -c 4
 You will receive 4 replies from VM1.
 
 ![Ping_VM1](./img/ping.png)
+
+So this is how we make a simple virtual network and communicate between two VMs.
