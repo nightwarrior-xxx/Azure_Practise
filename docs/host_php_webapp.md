@@ -15,13 +15,21 @@ az group create --resource-group myResourceGroup --location eastus
 -  Create an Azure AppService Plan
 
 ```
-az appservice plan create --resource-group myResourceGroup --name myAppServicePlan --sku FREE
+az appservice plan create \
+--resource-group myResourceGroup \
+--name myAppServicePlan \
+--sku FREE
 ```
 where ```sku``` stands for stock keep unit.
 
 - Create webapp
 
 ```
-az webapp create --plan myAppServicePlan --resource-group myResourceGroup --name tutoverflow --runtime "PHP|7.0" --deployment-local-git
+az webapp create \
+--plan myAppServicePlan \
+--resource-group myResourceGroup \
+--name tutoverflow \
+--runtime "PHP|7.0" \
+--deployment-local-git
 ```
 

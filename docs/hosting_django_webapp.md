@@ -41,17 +41,33 @@ python3 manage.py runserver <port>
 
 - Create an azure postgresql database
 ```
-az postgres server create --resource-group <resource group> --name <postgresql-name> --admin-username <admin-name> --admin-password <password> --sku-name B_Gen5_1 --location "West Europe"
+az postgres server create \
+--resource-group <resource group> \
+--name <postgresql-name> \
+--admin-username <admin-name> \
+--admin-password <password> \
+--sku-name B_Gen5_1 \
+--location "West Europe"
 ```
 
 - Create firewall rule for postgresql to allow access to all
 ```
-az postgres server firewall-rule create --resource-group <resource-group> --server-name <server-name> --start-ip-address=<ip> --end-ip-address=<ip> --name <AllowAllIps>
+az postgres server firewall-rule create \
+--resource-group <resource-group> \
+--server-name <server-name> \
+--start-ip-address=<ip> \
+--end-ip-address=<ip> \
+--name <AllowAllIps>
 ```
 
 - Allow access to yourself in postgresql server with you local [IPV4 address](https://www.whatsmyip.org/)
 ```
-az postgres server firewall-rule create --resource-group <resource-group> --server-name <postgresql-name> --start-ip-address=<your-ip-address> --end-ip-address=<your-ip-address> --name AllowLocalClient
+az postgres server firewall-rule create \
+--resource-group <resource-group> \
+--server-name <postgresql-name> \
+--start-ip-address=<your-ip-address> \
+--end-ip-address=<your-ip-address> \
+--name AllowLocalClient
 ```
 *Choose the second option of firewall rule*
 
