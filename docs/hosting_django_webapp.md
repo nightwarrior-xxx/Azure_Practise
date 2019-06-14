@@ -9,9 +9,9 @@ sudo apt install postgresql-9.6
 - Install the Virtual Environment and launch it
 ```
 python3 -m venv shit
-cd shit
-source ./bin/activate
-cd ..
+source ./shit/bin/activate
+cd django_with_sample
+source ./env.sh
 ```
 
 - Clone the demo repo
@@ -86,10 +86,10 @@ GRANT ALL PRIVILEGES ON DATABASE pollsdb TO manager;
 - Change the following in ```setting.py```
 
 ```
-DBHOST="<postgresql-name>.postgres.database.azure.com"
-DBUSER="manager@<postgresql-name>"
-DBNAME="pollsdb"
-DBPASS="supersecretpass"
+export DBHOST="<postgresql-name>.postgres.database.azure.com"
+export DBUSER="manager@<postgresql-name>"
+export DBNAME="pollsdb"
+export DBPASS="supersecretpass"
 ```
 
 - Run the server locally again to test
