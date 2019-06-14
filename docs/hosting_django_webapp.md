@@ -110,7 +110,7 @@ to:-
 ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
 ```
 
-Also, Django doesn't support serving static files on production. So you need to enable this manually. For this we will use [```WhiteNoise```](https://whitenoise.evans.io/en/stable/). WhiteNoide allows an app to serve its own static files. So you don't need to depend to nginx and Amazon S3. It makes your work easier because now you don't have to worry about performance of you website. WhiteNoise works with any ```[WSGI-compatible]```(https://www.fullstackpython.com/wsgi-servers.html) app but has some special auto-configuration features for Django.
+Also, Django doesn't support serving static files on production. So you need to enable this manually. For this we will use [```WhiteNoise```](https://whitenoise.evans.io/en/stable/). WhiteNoide allows an app to serve its own static files. So you don't need to depend to nginx and Amazon S3. It makes your work easier because now you don't have to worry about performance of you website. WhiteNoise works with any[```WSGI-compatible```](https://www.fullstackpython.com/wsgi-servers.html) app but has some special auto-configuration features for Django.
 
 *Quick Start for WhiteNoise*
 
@@ -125,4 +125,48 @@ For forever-cacheable files and compression support
 
 ```
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+```
+
+- Commit the changes
+
+```
+git add .
+git commit -m"Setting up things"
+```
+
+- Configure a deployment user
+
+```
+az webapp deployment user set --user-name <username> --password <password>
+```
+
+- Create an App Service Plan
+
+```
+az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku B1 --is-linux
+```
+
+- Create an App
+
+```
+az webapp create --resource-group myResourceGroup --plan myAppServicePlan --name <app-name> --runtime "PYTHON|3.7" --deployment-local-git
+```
+You will get a link for Azure git repo.
+
+- Configure environments variables
+
+```
+az webapp config appsettings set --name <app-name> --resource-group myResourceGroup --settings DBHOST="<postgresql-name>.postgres.database.azure.com" DBUSER="manager@<postgresql-name>" DBPASS="supersecretpass" DBNAME="pollsdb"
+```
+
+- Commit the changes again
+```
+git add .
+git commit -m"Changes done"
+```
+
+- Push to azure branch
+```
+git push azure master
 ```
