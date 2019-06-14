@@ -110,7 +110,7 @@ to:-
 ALLOWED_HOSTS = [os.environ['WEBSITE_SITE_NAME'] + '.azurewebsites.net', '127.0.0.1'] if 'WEBSITE_SITE_NAME' in os.environ else []
 ```
 
-Also, Django doesn't support serving static files on production. So you need to enable this manually. For this we will use ```[WhiteNoise]```(https://whitenoise.evans.io/en/stable/). WhiteNoide allows an app to serve its own static files. So you don't need to depend to nginx and Amazon S3. It makes your work easier because now you don't have to worry about performance of you website. WhiteNoise works with any ```[WSGI-compatible]```(https://www.fullstackpython.com/wsgi-servers.html) app but has some special auto-configuration features for Django.
+Also, Django doesn't support serving static files on production. So you need to enable this manually. For this we will use [```WhiteNoise```](https://whitenoise.evans.io/en/stable/). WhiteNoide allows an app to serve its own static files. So you don't need to depend to nginx and Amazon S3. It makes your work easier because now you don't have to worry about performance of you website. WhiteNoise works with any ```[WSGI-compatible]```(https://www.fullstackpython.com/wsgi-servers.html) app but has some special auto-configuration features for Django.
 
 *Quick Start for WhiteNoise*
 
