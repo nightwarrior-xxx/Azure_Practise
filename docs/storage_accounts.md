@@ -97,7 +97,7 @@ queue_service.create_queue('test')
 queue_service.put_messages('test', '<message>')
 ```
 
-![Example](./img/azure_storage_example.png)
+![Example](./img/azure_queue_example.png)
 
 *Peek message in Azure Storage Queue*
 
