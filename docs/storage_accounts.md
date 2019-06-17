@@ -1,14 +1,14 @@
-## Why storage
+# Why storage
 Suppose you have a image processing website . Now you don't want your website to function slowely. So you have a backend servers for that now. Now you also don't want your backend server to fail if number of process increases. So you make a storage account that stores processes and then you distribute those all processes equally in backend servers. 
 After processing those all data should be now store somewhere else so you need a storage for that also. You don't use a database for storing because you can store object in database.
 
 ![Why_storage](./img/why_storage.png)
 
-## Storage VS DataBase
+# Storage VS DataBase
 
 ![Storage vs Database](./img/storage_database.png)
 
-## Azure Storage
+# Azure Storage
 Azure Storage is a service from Azure which provides storage for various purposes. Azure storage is a cloud storage solutions for modern applications be it be scalibility, durability and availability.
 
 - General Purpose Storage
@@ -57,9 +57,9 @@ Consider the above scenario where you have two regions America and India. Now if
 
 ![replications](./img/replications.png)
 
-### Components of Azure Storage
+## Components of Azure Storage
 
-#### Blob Service
+## Blob Service
 File system service where you can upload any file. Same as S3 in Amazon Web Services.
 *Containers* Here containers are same as folder where you store files.
 
@@ -107,7 +107,7 @@ block_blob_service.get_blob_to_path('<container name>', 'file_name', 'full_path_
 
 ![Download Blob](./img/azure_blob_download.png)
 
-### Queue Service
+## Queue Service
 Queue Service is almost same as queue data structure which follows FIFO concept. Suppose we have a image processing website which performs various process. We can store all the processes there and then assign each process to every server.
 
 ![Azure Queue](./img/azure_queue.png)
@@ -154,6 +154,12 @@ for msg in messages:
 ![Azure Storage Delete](./img/azure_storage_queue_delete.png)
 
 
+## File System Service 
 
+Almost same as blob service with a small differene that you can treat as an extended drive of your system. To achieve this move to File Service section in Azure Storage account and click on the ```connect``` option on the top. Use the commands with the preference of your system to connect to Azure file system which will appear on the right hand side of your screen.
+
+![Azure file service](./img/azure_file_service.png)
+
+## Tables Service
 
 
