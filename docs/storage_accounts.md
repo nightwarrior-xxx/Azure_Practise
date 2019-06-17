@@ -23,7 +23,7 @@ Azure Storage is a service from Azure which provides storage for various purpose
             - Archive
                 Optimised for data that is that is hardly accessed and stored for atleast 180 days.
 
-                ![access_tiers](./img/acces_tiers.png)
+                ![access_tiers](./img/access_tiers.png)
 
     - StorageV1(general purpose V1)
         + All features are same as general purpose V2 but with few difference.
@@ -56,3 +56,73 @@ Suppose you have two regions (i) America (ii) India. Both of the regions have nu
 Consider the above scenario where you have two regions America and India. Now if your main server which is in New York (a zone in region America) crashes, you can only read data from India Region.
 
 ![replications](./img/replications.png)
+
+### Components of Azure Storage
+
+#### Blob Service
+File system service where you can upload any file. Same as S3 in Amazon Web Services.
+*Containers* Here containers are same as folder where you store files.
+
+There are 3 public access levels
+
+- Private
+Files can be accessed by only this owner.
+
+- Blob
+Files can be accessed by others inside this container.
+
+- Container
+If there is a folder inside this container that also can be accessed.
+
+![containers](./img/container.png)
+
+#### Queue Service
+Queue Service is almost same as queue data structure which follows FIFO concept. Suppose we have a image processing website which performs various process. We can store all the processes there and then assign each process to every server.
+
+![Azure Queue](./img/azure_queue.png)
+
+*Send the message to Azure Storage Queue*
+
+- Install the azure storage python library
+```
+pip install azure-storage
+```
+
+- Import the serivces and send the message
+```
+from azure.storage.queue import QueueService
+
+queue_service = QueueService(account_name='', account_key='')
+queue_service.create_queue('test')
+queue_service.put_messages('test', '<message>')
+```
+
+![Example](./img/azure_storage_example.png)
+
+*Peek message in Azure Storage Queue*
+
+You can peek the message in front of the queue without deleting the message in front of the queue.
+
+```
+messages = queue_service.peek_messages('<queue_name>')
+for msg in message:
+    print(msg.content)
+```
+
+*DeQueue Messages from Azure Storage Queue*
+
+Dequeuing the message from the Azure Storage Queue will automatically delete the message from the Queue. Let's have a quick look on it.
+
+```
+messages = queue_service.get_messages('<queue_name>')
+for msg in messages:
+    print(msg.content)
+    queue_service.delete_message('<queue_name>', msg.id,msg.pop_receipt)
+```
+
+![Azure Storage Delete](./img/azure_storage_queue_delete.png)
+
+
+
+
+
