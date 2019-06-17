@@ -24,4 +24,4 @@ az webapp up --location <location eg:- westeurope, eastus> --name <app_name>
 
 Azure will hardly take two to three minutes and your site will be up 
 
-![Static Site Hosted](./img/static_site_hosted.pngs)
+![Static Site Hosted](./img/static_site_hosted.png)
