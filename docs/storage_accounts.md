@@ -76,7 +76,38 @@ If there is a folder inside this container that also can be accessed.
 
 ![containers](./img/container.png)
 
-#### Queue Service
+
+*Create a container in blob*
+
+```
+from azure.storage.blob import BlockBlobService
+block_blob_service = BlockBlobService(account_name='<account_name>', account_key='<account_key>')
+block_blob_service.create_container('test')
+```
+
+![Blob Create](./img/azure_blob_create.png)
+
+*Sending blob in the container*
+
+```
+import os
+local_path = os.path.expanduser('~/Documents/Resume')
+file_name = 'aman'+'.pdf'
+file_path = os.path.join(local_path, file_name)
+block_blob_service.create_blob_from_path('<container_name>', file_name, file_path)
+```
+
+![Upload blob ot container](./img/azure_blob_upload.png)
+
+*Downloading blob from container*
+
+```
+block_blob_service.get_blob_to_path('<container name>', 'file_name', 'full_path_to_file')
+```
+
+![Download Blob](./img/azure_blob_download.png)
+
+### Queue Service
 Queue Service is almost same as queue data structure which follows FIFO concept. Suppose we have a image processing website which performs various process. We can store all the processes there and then assign each process to every server.
 
 ![Azure Queue](./img/azure_queue.png)
