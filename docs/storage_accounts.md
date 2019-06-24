@@ -180,5 +180,9 @@ from azure.cosmosdb.table.model import Entity
 The entity object can be of type Entity. Every entity must include PartitionKey and RowKey properties.These are the unique itentifiers of your entity and together they form a primary key.
 Entities having same PartitionKey are stored on the same node. RowKey are used as an unique identifiers within a partition. 
 
- Now, add the entity object with insert_entity method.
+Now, add the entity object with insert_entity method.
 ![add table](./img/table3.png)
+
+In this way you can simple use the Azure Cosmosdb.
+
+Learning how to use Azure is a complicated task as Azure is bringing new stuff every day. So you need to keep yourself updated to move with Azure.
