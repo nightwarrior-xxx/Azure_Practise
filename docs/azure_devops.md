@@ -3,6 +3,7 @@ Azure is a collection of cloud services which developers and IT professional can
 
 ### What is DevOps ?
 DevOps is a integration of Development and Operations teams in order to improve collaboration and productivity. This is done by automating workflows and productivity.
+Alternatively, DevOps is a set of practices to reduce the time between the committing a change and move it into production stage.
 
 ### Components of Azure DevOps
 Following are the components of Azure DevOps
