@@ -1,5 +1,5 @@
 # Why storage
-Suppose you have a image processing website . Now you don't want your website to function slowely. So you have a backend servers for that now. Now you also don't want your backend server to fail if number of process increases. So you make a storage account that stores processes and then you distribute those all processes equally in backend servers. 
+Suppose you have a image processing website . You don't want your website to function slowly. So you have a backend servers for that. Now you also don't want your backend server to fail if number of process increases. So you make a storage account that stores processes and then you distribute those all processes equally in backend servers. 
 After processing those all data should be now store somewhere else so you need a storage for that also. You don't use a database for storing because you can store object in database.
 
 ![Why_storage](./img/why_storage.png)
@@ -176,6 +176,7 @@ from azure.cosmosdb.table.model import Entity
 ```
 
 ![table](./img/t1.png)
+
 The entity object can be of type Entity. Every entity must include PartitionKey and RowKey properties.These are the unique itentifiers of your entity and together they form a primary key.
 Entities having same PartitionKey are stored on the same node. RowKey are used as an unique identifiers within a partition. 
 
