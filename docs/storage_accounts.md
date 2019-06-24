@@ -158,8 +158,26 @@ for msg in messages:
 
 Almost same as blob service with a small differene that you can treat as an extended drive of your system. To achieve this move to File Service section in Azure Storage account and click on the ```connect``` option on the top. Use the commands with the preference of your system to connect to Azure file system which will appear on the right hand side of your screen.
 
-![Azure file service](./img/azure_file_service.png)
+<!-- ![Azure file service](./img/azure_file_service.png) -->
 
 ## Tables Service
 
+Azure table storage service stores a large amount of structured data. This service is a NoSql datastore. Azure table is stored is ideal for storing structured, non relational data.
 
+- Install python package for Azure CosmosDB table
+```
+pip install azure-cosmosdb-table
+```
+
+- import table service and entity class
+```
+from azure.cosmosdb.table.tableservice import TableService
+from azure.cosmosdb.table.model import Entity
+```
+
+![table](./img/t1.png)
+The entity object can be of type Entity. Every entity must include PartitionKey and RowKey properties.These are the unique itentifiers of your entity and together they form a primary key.
+Entities having same PartitionKey are stored on the same node. RowKey are used as an unique identifiers within a partition. 
+
+ Now, add the entity object with insert_entity method.
+![add table](./img/table3.png)

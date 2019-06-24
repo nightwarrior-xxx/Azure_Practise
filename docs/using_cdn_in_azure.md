@@ -40,6 +40,3 @@ After creating an endpoint click on the endpoint generated.
 ![endpoint2](./img/endpoint2.png)
 Click on the endpoint URL on the top right and add your *container name* and *filename* with a ```/``` between them, just like shown below
 ![hosted.png](./img/hosted.png)
-
-
-
