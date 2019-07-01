@@ -13,7 +13,6 @@ Now, first lets understand why the difference between storage and database
 | Storage                   |      Database          |
 |---------------------------|------------------------|
 |Storage is used to store random objects.   |Databases is used to store interrelated data. |
-|                          |                                                               |
 |Considering the above example you will need a storage for storing images you need to process.     |   Again, considering the above example you have to use a database for storing the details of the images.|
 
 # Azure Storage
