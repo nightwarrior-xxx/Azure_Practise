@@ -1,18 +1,26 @@
 # Why storage
-Suppose you have a image processing website . You don't want your website to function slowly. So you have a backend servers for that. Now you also don't want your backend server to fail if number of process increases. So you make a storage account that stores processes and then you distribute those all processes equally in backend servers. 
-After processing those all data should be now store somewhere else so you need a storage for that also. You don't use a database for storing because you can store object in database.
+Suppose you have a image processing website . You don't want your website to function slowly. So you have a backend servers for that. You also don't want your backend server to fail if number of process increases. In order to conquer this you make a storage account that stores processes and then you distribute those all processes equally in backend servers. 
+After processing those all data should be now store somewhere so you need a storage for that also. 
 
 ![Why_storage](./img/why_storage.png)
 
+Now, first lets understand why the difference between storage and database
+
+
+
 # Storage VS DataBase
 
-![Storage vs Database](./img/storage_database.png)
+| Storage                   |      Database          |
+|---------------------------|------------------------|
+|Storage is used to store random objects.   |Databases is used to store interrelated data. |
+|                          |                                                               |
+|Considering the above example you will need a storage for storing images you need to process.     |   Again, considering the above example you have to use a database for storing the details of the images.|
 
 # Azure Storage
 Azure Storage is a service from Azure which provides storage for various purposes. Azure storage is a cloud storage solutions for modern applications be it be scalibility, durability and availability.
 
 - General Purpose Storage
-    - StorageV2(general purpose V2)
+    - StorageV2(general purpose V2
         + Incorporates all features of general purpose V1 and blob storage
         + Delivers lowest per gigabits cost
         + Support Access Tiers
