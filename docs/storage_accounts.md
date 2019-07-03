@@ -4,22 +4,22 @@ After processing those all data should be now store somewhere so you need a stor
 
 ![Why_storage](./img/why_storage.png)
 
-Now, first lets understand why the difference between storage and database
-
-
+Now, first lets understand why the difference between storage and database. It's important to understand the basic difference as developers might use database for storing things which shouldn't be stored there or vice versa.
 
 # Storage VS DataBase
 
 | Storage                   |      Database          |
 |---------------------------|------------------------|
-|Storage is used to store random objects.   |Databases is used to store interrelated data. |
+|Storage is to store random objects.   |Databases is used to store interrelated data. |
 |Considering the above example you will need a storage for storing images you need to process.     |   Again, considering the above example you have to use a database for storing the details of the images.|
+
+I hope the basic difference between storage and database is clear. Let's move on. Now the question arises that what is Azure Storage and why we can use Azure Cloud Storage, even I want to move to Cloud Storage.
 
 # Azure Storage
 Azure Storage is a service from Azure which provides storage for various purposes. Azure storage is a cloud storage solutions for modern applications be it be scalibility, durability and availability.
 
 - General Purpose Storage
-    - StorageV2(general purpose V2
+    - StorageV2(general purpose V2)
         + Incorporates all features of general purpose V1 and blob storage
         + Delivers lowest per gigabits cost
         + Support Access Tiers
@@ -35,7 +35,7 @@ Azure Storage is a service from Azure which provides storage for various purpose
     - StorageV1(general purpose V1)
         + All features are same as general purpose V2 but with few difference.
         + When to use Storage V1
-            - When you want azure class demplyment model.
+            - When you want azure classic demplyment model.
             - When your applications is transition intensive and uses geo-replication bandwidth.
         + No zone replication storage (ZRS)
 
@@ -127,6 +127,7 @@ pip install azure-storage
 ```
 
 - Import the serivces and send the message
+
 ```
 from azure.storage.queue import QueueService
 
@@ -177,6 +178,7 @@ pip install azure-cosmosdb-table
 ```
 
 - import table service and entity class
+
 ```
 from azure.cosmosdb.table.tableservice import TableService
 from azure.cosmosdb.table.model import Entity
