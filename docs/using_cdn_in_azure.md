@@ -27,7 +27,7 @@ Containers are used to store files and folders in Azure.
 
 Now, click on the upload button and upload a file or image you want to server to the user.
 
-![Upload an image](./png/upload_in_blob.png)
+![Upload an image](./img/upload_in_blob.png)
 
 - Create an Azure CDN account and an endpoint
 
