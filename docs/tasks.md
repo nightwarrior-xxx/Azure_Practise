@@ -8,6 +8,7 @@ Three types of cloud are there :-
 + public
 + private
 + hybrid
+
 The serices provided in cloud 
 + IaaS
 + PaaS
